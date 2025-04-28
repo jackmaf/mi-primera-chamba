@@ -6,6 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
+/vendor/bundle
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
@@ -30,6 +31,51 @@
 !/tmp/storage/.keep
 
 /public/assets
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/config/credentials/*.key
+
+# Ignorar archivos de entorno
+/.env
+/.env.*
+!/.env.example
+
+# Archivos específicos de Rails
+/coverage/
+/spec/tmp
+*.orig
+rerun.txt
+pickle-email-*.html
+
+# Archivos de caché
+.sass-cache/
+/public/system/
+/public/uploads/
+
+# Archivos de IDE/Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.DS_Store
+*.orig
+*.rej
+.generators
+.rakeTasks
+
+# Archivos npm específicos
+npm-debug.log
+
+# Archivos de configuración local
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
