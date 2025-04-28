@@ -1,0 +1,19 @@
+current directory: /home/jack/mi-primera-chamba/vendor/bundle/ruby/3.2.0/gems/debug-1.10.0/ext/debug
+/usr/bin/ruby3.2 -I/usr/lib/ruby/vendor_ruby extconf.rb
+creating Makefile
+
+current directory: /home/jack/mi-primera-chamba/vendor/bundle/ruby/3.2.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250428-269084-xy1s8g sitelibdir\=./.gem.20250428-269084-xy1s8g clean
+
+current directory: /home/jack/mi-primera-chamba/vendor/bundle/ruby/3.2.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250428-269084-xy1s8g sitelibdir\=./.gem.20250428-269084-xy1s8g
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/jack/mi-primera-chamba/vendor/bundle/ruby/3.2.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250428-269084-xy1s8g sitelibdir\=./.gem.20250428-269084-xy1s8g install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20250428-269084-xy1s8g/debug
+
+current directory: /home/jack/mi-primera-chamba/vendor/bundle/ruby/3.2.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250428-269084-xy1s8g sitelibdir\=./.gem.20250428-269084-xy1s8g clean
