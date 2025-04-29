@@ -1,0 +1,32 @@
+<%= form_with(model: department) do |form| %>
+  <% if department.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(department.errors.count, "error") %> prohibited this department from being saved:</h2>
+
+      <ul>
+        <% department.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :name, "Nombre", class: "form-label" %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :code_postal, "Código Postal", class: "form-label" %>
+    <%= form.text_field :code_postal, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :country_id, "País", class: "form-label" %>
+    <%= form.collection_select :country_id, Country.all, :id, :name, { prompt: "Seleccione un país" }, { class: "form-select" } %>
+  </div>
+
+  <div>
+    <%= form.submit "Guardar", class: "btn btn-primary" %>
+  </div>
+<% end %>

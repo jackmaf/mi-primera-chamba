@@ -1,0 +1,111 @@
+<div class="container mt-4">
+  <h1 class="text-center mb-4">Sistema de Gestión de Ubicaciones</h1>
+
+  <!-- Países -->
+  <div class="card mb-4">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <h2 class="h4 mb-0">Países</h2>
+      <%= link_to "Nuevo País", new_country_path, class: "btn btn-primary btn-sm" %>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Código Postal</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @countries.each do |country| %>
+              <tr>
+                <td><%= country.name %></td>
+                <td><%= country.code_postal %></td>
+                <td>
+                  <%= link_to "Ver", country, class: "btn btn-info btn-sm" %>
+                  <%= link_to "Editar", edit_country_path(country), class: "btn btn-warning btn-sm" %>
+                  <%= button_to "Eliminar", country, method: :delete, class: "btn btn-danger btn-sm", form: { data: { turbo_confirm: "¿Estás seguro?" } } %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Departamentos -->
+  <div class="card mb-4">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <h2 class="h4 mb-0">Departamentos</h2>
+      <%= link_to "Nuevo Departamento", new_department_path, class: "btn btn-primary btn-sm" %>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Código Postal</th>
+              <th>País</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @departments.each do |department| %>
+              <tr>
+                <td><%= department.name %></td>
+                <td><%= department.code_postal %></td>
+                <td><%= department.country&.name %></td>
+                <td>
+                  <%= link_to "Ver", department, class: "btn btn-info btn-sm" %>
+                  <%= link_to "Editar", edit_department_path(department), class: "btn btn-warning btn-sm" %>
+                  <%= button_to "Eliminar", department, method: :delete, class: "btn btn-danger btn-sm", form: { data: { turbo_confirm: "¿Estás seguro?" } } %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ciudades -->
+  <div class="card mb-4">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <h2 class="h4 mb-0">Ciudades</h2>
+      <%= link_to "Nueva Ciudad", new_city_path, class: "btn btn-primary btn-sm" %>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Código Postal</th>
+              <th>Departamento</th>
+              <th>País</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @cities.each do |city| %>
+              <tr>
+                <td><%= city.name %></td>
+                <td><%= city.code_postal %></td>
+                <td><%= city.department&.name %></td>
+                <td><%= city.department&.country&.name %></td>
+                <td>
+                  <%= link_to "Ver", city, class: "btn btn-info btn-sm" %>
+                  <%= link_to "Editar", edit_city_path(city), class: "btn btn-warning btn-sm" %>
+                  <%= button_to "Eliminar", city, method: :delete, class: "btn btn-danger btn-sm", form: { data: { turbo_confirm: "¿Estás seguro?" } } %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div> 
